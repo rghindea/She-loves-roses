@@ -2,8 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --primary-bg-color: #fbfada;
-  --primary-text-color: black;
+  --primary-color: #fbfada;
+  --dark-color: black;
   --secondary-color: rgb(67, 104, 80);
 }
 
@@ -12,7 +12,7 @@
   padding: 0;
 }
 body {
-  background-color: var(--primary-bg-color);
+  /* background-color: var(--primary-bg-color); */
   font-family: "Roboto Condensed", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -21,9 +21,16 @@ body {
 .flex {
   display: flex;
 }
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
 
 .justify-around {
   justify-content: space-around;
+}
+.justify-between {
+  justify-content: space-between;
 }
 
 .items-center {
@@ -32,6 +39,18 @@ body {
 
 .gap-15 {
   gap: 15px;
+}
+.gap-20 {
+  gap: 20px;
+}
+.gap-50 {
+  gap: 50px;
+}
+.p-50 {
+  padding: 50px;
+}
+.wrap {
+  flex-wrap: wrap;
 }
 .navbar {
   background-color: white;
@@ -42,7 +61,7 @@ body {
 }
 
 .navbar a {
-  color: var(--primary-text-color);
+  color: var(--dark-color);
   text-decoration: none;
   font-size: 20px;
   font-style: italic;
@@ -53,3 +72,12 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
 } */
+
+.product-card {
+  background-color: var(--primary-color);
+  width: 200px;
+  text-align: center;
+  padding: 15px 5px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 10px;
+}
