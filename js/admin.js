@@ -56,7 +56,6 @@ const colorInput = document.getElementById("color");
 const originInput = document.getElementById("origin");
 const saveProductButton = document.getElementById("save-btn");
 
-saveProductButton.addEventListener("click", saveProduct);
 // console.log(
 //   nameInput,
 //   priceInput,
@@ -66,3 +65,73 @@ saveProductButton.addEventListener("click", saveProduct);
 //   colorInput,
 //   originInput
 // );
+
+let editMode = false;
+let currentEditableProductId;
+
+saveProductButton.addEventListener("click", saveProduct);
+
+function saveProduct(event) {
+  event.preventDefault();
+
+  const product = {
+    name: nameInput.value,
+    price: Number(priceInput.value),
+    imageUrl: imageUrlInput.value,
+    details: detailsInput.value,
+    category: categoryInput.value,
+    color: colorInput.value,
+    origin: originInput.value,
+  };
+
+  fetch(editMode ? `${url}/${currentEditableProductId}` : url, {
+    method: editMode ? "PUT" : "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(product),
+  }).then(() => {
+    form.reset();
+    displayAllProducts();
+    editMode = false;
+  });
+}
+
+// edit product
+productsTableBody.addEventListener("click", handleActions);
+
+function handleActions(event) {
+  const className = event.target.parentElement.className;
+  if (className.includes("edit")) {
+    const productId = className.split("-")[1];
+    editProduct(productId);
+  } else if (className.includes("delete")) {
+    const productId = className.split("-")[1];
+    deleteProduct(productId);
+  }
+}
+
+function editProduct(id) {
+  getProductById(id).then((product) => {
+    editMode = true;
+    nameInput.value = product.name;
+    priceInput.value = product.price;
+    imageUrlInput.value = product.imageUrl;
+    detailsInput.value = product.details;
+    categoryInput.value = product.category;
+    colorInput.value = product.color;
+    originInput.value = product.origin;
+
+    currentEditableProductId = product.id;
+  });
+}
+
+// delete product
+
+function deleteProduct(id) {
+  fetch(`${url}/${id}`, {
+    method: "DELETE",
+  }).then(() => {
+    displayAllProducts();
+  });
+}

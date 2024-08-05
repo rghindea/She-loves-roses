@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "426a58a4-c759-4c1c-91b1-0a309d7f7e58",
+		"name": "She_loves_roses products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36866353"
+	},
+	"item": [
+		{
+			"name": "get all products",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "product by id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "add new product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"name\": \"DESDEMONA\",\r\n    \"imageUrl\": \"https://lh3.googleusercontent.com/pw/AP1GczOuiGlMny8DurCRczVy3RTR90zKu-nAE2C3is4jwzCB0VmPENLZXQC8vXUCTePAsGJyPIYlcRkgpW3YeufRTP9iWWCkcFaSVJ3VTMN-5C-jg_NrTu6NtBVw9RsZLhzYkzsDyvRHSe_La5N8EmJVhOttibBfAwXWafpCEhuo8-qaqDpG5LsK9tT3lQ1rTKX5COE73CcCZCZEDhGmHCJvGZJE4koMQUiyCGRbtG8zfFq56ix57Gh8ehsfOctpe0_IQQwamWu8KLFOhIXePcL9e63CO1XrysiCrTjaQbW0Kw2yHMU99NoX38RtL_tqWdMk5njZVTn0Q56lb0TnvvxEtMT13OaU-iwbqYCiEQjj9nqn9Qu_V0LzWXnDRYtNQOV2uWIiSfenM6lNoC4XMqkPsdoZE743Nmo6f-cTbCT8tHTiioG2NPV09lDhSMsZxbaU12fxSesBfvyPaiiMnd5gUOmbsWvbi1VNZYP9WC8tDD03hMIAJmd0KweXZoaNTgqGPlC2h4W6RHxPoLSWi9RpEHPb135qUMz9G1OWeeFKBB1o91WZMm9Y3BcGDiMxMAPox_CDZxkjsoGJf7XiLZ79ZlRhHM_BMthXyYjTSpdhbtyBsO2e2PG5gUbQwLtE_pswqDw4LCh9DKUIuCCeMTVcIKM7ELkNmB4it59SovYnx-TGaV86FTXmboG-K-RS-2E7MUxvzfPvhWj9FiCIYT1HlFu-v4DrGmX4dz_FVs1iU7iZjgXD2_fHHxq6CoR2FbZ-8M-RnWEJeaGaBAI9GeLdFzdeo8RZ-ShniJjJSMhVOdgfzwu0p-TH93uUK1y4truw7AjTh5kHESg6zv214SBkH0vPqWQgmzIlmrcC57j6SB0whDA7_fKGgaTORLcG-LqfHoCTVA7-lqY43mq-fx8JsIe6ZbLoP-jZBFbwLtNZn7W6TKU_e3HL7Adlzz8=w795-h795-s-no-gm?authuser=1\",\r\n    \"price\": \"50 lei\",\r\n    \"details\": \"Peachy pink buds open to beautiful, white, chalice-shaped blooms, with a pinkish hue. The incurved petals create an arresting interplay of light and shadow. The strong Old Rose fragrance has hints of almond blossom, cucumber and lemon zest. It forms a most attractive neat, rounded, bushy shrub. Named after the tragic heroine of Shakespeare’s Othello.\",\r\n    \"category\": \"shrub roses\",\r\n    \"color\": \"white\",\r\n    \"origin\": \"english\"\r\n  }\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://668e5802bf9912d4c92de20c.mockapi.io/products",
+					"protocol": "https",
+					"host": [
+						"668e5802bf9912d4c92de20c",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update product",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "delete product",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
