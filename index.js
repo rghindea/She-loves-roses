@@ -35,6 +35,36 @@ async function displayAllProducts() {
       localStorage.setItem("cart", JSON.stringify(cart));
     });
   });
+
+  const colors = products.map((product) => product.color);
+  // console.log(colors);
+
+  const uniqueColors = Array.from(new Set(colors));
+  // console.log(uniqueColors);
+
+  colorFilterContainer.innerHTML += uniqueColors
+    .map(
+      (color) =>
+        `
+			<div class="color-filter ${
+        color === "multicolor" ? "multicolor" : ""
+      }" style="background: ${color === "multicolor" ? "" : color}"
+				data-color=${color}
+				>
+			</div>
+		`
+    )
+    .join("");
+
+  colorFilterContainer.addEventListener("click", (e) => {
+    if (e.target.classList.contains("color-filter")) {
+      const color = e.target.getAttribute("data-color");
+      mainContainer.innerHTML = products
+        .filter((product) => product.color == color)
+        .map(mapProductToCard)
+        .join(" ");
+    }
+  });
 }
 
 //VARIANTA INITIALA A CODULUI
