@@ -12,6 +12,6 @@ async function showProductDetails() {
   document.querySelector(".main").innerHTML = `
   <div class = "details-container">
   <img src="../${product.imageUrl}" width="350px" />
-  <p>${product.details}</p>
+  <p id="details">${product.details}</p>
   </div>`;
 }
